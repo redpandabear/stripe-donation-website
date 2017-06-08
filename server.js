@@ -17,6 +17,11 @@ app.get("/", (req, res) =>
   // res.render("index.html", {keyPublishable})
 );
 
+app.get("/public-data-key", function(req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({"key": keyPublishable}));
+});
+
 app.post("/charge", (req, res) => {
   // req is information in the form where the user enters their information
   // res.body is information entered into the form except payment information

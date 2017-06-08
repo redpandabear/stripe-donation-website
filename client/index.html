@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html>
 <body>
-<form action="/charge" method="post">
-    <article><label>Amount: $5.00</label></article>
-
-    <script class="stripe-button" src="//checkout.stripe.com/v2/checkout.js" data-locale="auto" data-description="Sample Charge" data-amount="500"></script>
-</form>
+<div>
+    <form class='first-donation-form' action="/charge">
+        <label class="payment-amount-label"> How much would you like to contribute? </label>
+        <input id="fiat-input-amount" class="payment-amount" controllerChangeFunction="onSetFiatPayAmount"/>
+        <input id="stripeToken" hidden>
+        <button id="donateButton">Donate</button>
+        <label id="#error_explanation"></label>
+    </form>
+</div>
+<!-- Scripts begin here -->
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script src="third_party/jquery-3.2.1.min.js"></script>
+<script src="controller/setup_controller.js"></script>
+<script src="controller/controller_change.js"></script>
+<script src="controller/controller_click.js"></script>
+<script src="startup/test_change_amount.js"></script>
+<!-- Scripts end here -->
 </body>
 </html>
