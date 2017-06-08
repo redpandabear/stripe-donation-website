@@ -1,3 +1,4 @@
+require('dotenv').load();
 const keyPublishable = process.env.STRIPE_PUBLISHABLE_KEY;
 const keySecret = process.env.STRIPE_SECRET_KEY;
 

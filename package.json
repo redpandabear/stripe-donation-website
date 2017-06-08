@@ -1,9 +1,10 @@
 {
   "main": "server.js",
   "dependencies": {
-    "express":"",
-    "stripe":"",
-    "body-parser":"",
-    "pug":""
+    "body-parser": "",
+    "dotenv": "^4.0.0",
+    "express": "",
+    "pug": "",
+    "stripe": ""
   }
 }
