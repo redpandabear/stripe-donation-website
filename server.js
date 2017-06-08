@@ -4,14 +4,23 @@ const keySecret = process.env.STRIPE_SECRET_KEY;
 
 const app = require("express")();
 const stripe = require("stripe")(keySecret);
+const path = require("path");
+const express = require('express');
 
 app.set("view engine", "pug");
 app.use(require("body-parser").urlencoded({extended: false}));
+//app.use(path.join(__dirname + '/client'));
+app.use(express.static(path.join(__dirname + '/client')));
 
 app.get("/", (req, res) =>
-  res.render("index.pug", {keyPublishable}));
+  res.sendFile(path.join(__dirname, 'client', 'index.html'))
+  // res.render("index.html", {keyPublishable})
+);
 
 app.post("/charge", (req, res) => {
+  // req is information in the form where the user enters their information
+  // res.body is information entered into the form except payment information
+  // The form ends up being an iFrame that pops up
   let amount = 500;
   
   stripe.customers.create({
@@ -28,5 +37,6 @@ app.post("/charge", (req, res) => {
   .catch(err => console.log("Error:", err))
   .then(charge => res.render("charge.pug"));
 });
+
 
 app.listen(4567);
