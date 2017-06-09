@@ -6,8 +6,8 @@
         <label class="payment-amount-label"> How much would you like to contribute? </label>
         <input id="fiat-input-amount" class="payment-amount" controllerChangeFunction="onSetFiatPayAmount"/>
         <input id="stripeToken" hidden>
-        <button id="donateButton">Donate</button>
-        <label id="#error_explanation"></label>
+        <button id="donateButton" controllerClickFunction="openFiatDonation">Donate</button>
+        <label id="error_explanation"></label>
     </form>
 </div>
 <!-- Scripts begin here -->
