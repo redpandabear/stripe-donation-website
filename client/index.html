@@ -2,10 +2,10 @@
 <html>
 <body>
 <div>
-    <form class='first-donation-form' action="/charge">
+    <form class='fiat-donation-form' action="/charge" method="post">
         <label class="payment-amount-label"> How much would you like to contribute? </label>
         <input id="fiat-input-amount" class="payment-amount" controllerChangeFunction="onSetFiatPayAmount"/>
-        <input id="stripeToken" hidden>
+        <input id="stripeToken" hidden> <!-- Used when the form is submitted -->
         <button id="donateButton" controllerClickFunction="openFiatDonation">Donate</button>
         <label id="error_explanation"></label>
     </form>
