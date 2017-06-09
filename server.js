@@ -27,6 +27,9 @@ app.post("/charge", (req, res) => {
   // req is information in the form where the user enters their information
   // res.body is information entered into the form except payment information
   // The form ends up being an iFrame that pops up
+  // TODO: Follow the instructions given in https://www.youtube.com/watch?v=k66bOHX8MnY to get a React landing page
+  // TODO: Make sure that req.body actually contains data from the checkout box
+
   let amount = 500;
   
   stripe.customers.create({
