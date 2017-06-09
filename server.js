@@ -2,10 +2,11 @@ require('dotenv').load();
 const keyPublishable = process.env.STRIPE_PUBLISHABLE_KEY;
 const keySecret = process.env.STRIPE_SECRET_KEY;
 
-const app = require("express")();
+const express = require('express');
+const app = express();
 const stripe = require("stripe")(keySecret);
 const path = require("path");
-const express = require('express');
+
 
 app.set("view engine", "pug");
 app.use(require("body-parser").urlencoded({extended: false}));
@@ -42,6 +43,5 @@ app.post("/charge", (req, res) => {
   .catch(err => console.log("Error:", err))
   .then(charge => res.render("charge.pug"));
 });
-
 
 app.listen(4567);
