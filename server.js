@@ -7,7 +7,6 @@ const app = express();
 const stripe = require("stripe")(keySecret);
 const path = require("path");
 
-
 app.set("view engine", "pug");
 app.use(require("body-parser").urlencoded({extended: false}));
 //app.use(path.join(__dirname + '/client'));
@@ -30,7 +29,7 @@ app.post("/charge", (req, res) => {
   // TODO: Follow the instructions given in https://www.youtube.com/watch?v=k66bOHX8MnY to get a React landing page
   // TODO: Make sure that req.body actually contains data from the checkout box
 
-  let amount = 500;
+  const amount = req.body.amount * 100;
   
   stripe.customers.create({
     email: req.body.stripeEmail,

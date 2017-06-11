@@ -4,14 +4,15 @@
 <div>
     <form class='fiat-donation-form' action="/charge" method="post">
         <label class="payment-amount-label"> How much would you like to contribute? </label>
-        <input id="fiat-input-amount" class="payment-amount" controllerChangeFunction="onSetFiatPayAmount"/>
-        <input id="stripeToken" hidden> <!-- Used when the form is submitted -->
+        <input type="number" name="amount" id="fiat-input-amount" class="payment-amount" controllerChangeFunction="onSetFiatPayAmount"/>
+        <input id="stripeToken" name="stripeToken" type="hidden"> <!-- Used when the form is submitted -->
+        <input id="stripeEmail" name="stripeEmail" type="hidden"> <!-- Used when the form is submitted -->
         <button id="donateButton" controllerClickFunction="openFiatDonation">Donate</button>
-        <label id="error_explanation"></label>
+        <label type="text" id="error_explanation"></label>
+        <script src="https://checkout.stripe.com/checkout.js"></script>
     </form>
 </div>
 <!-- Scripts begin here -->
-<script src="https://checkout.stripe.com/checkout.js"></script>
 <script src="third_party/jquery-3.2.1.min.js"></script>
 <script src="controller/setup_controller.js"></script>
 <script src="controller/controller_change.js"></script>
