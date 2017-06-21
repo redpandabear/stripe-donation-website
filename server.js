@@ -1,3 +1,6 @@
+require('babel-register')({
+    presets: ['react']
+});
 require('dotenv').load();
 const keyPublishable = process.env.STRIPE_PUBLISHABLE_KEY;
 const keySecret = process.env.STRIPE_SECRET_KEY;
@@ -6,6 +9,9 @@ const express = require('express');
 const app = express();
 const stripe = require("stripe")(keySecret);
 const path = require("path");
+const react = require("react");
+const reactDOMServer = require("react-dom/server");
+const myComponent = require('./server/components/landing_page_fiat.jsx');
 
 app.set("view engine", "pug");
 app.use(require("body-parser").urlencoded({extended: false}));
@@ -28,7 +34,7 @@ app.post("/charge", (req, res) => {
   // The form ends up being an iFrame that pops up
   // TODO: Follow the instructions given in https://www.youtube.com/watch?v=k66bOHX8MnY to get a React landing page
   // TODO: Make sure that req.body actually contains data from the checkout box
-
+  var self = this;
   const amount = req.body.amount * 100;
   
   stripe.customers.create({
@@ -43,7 +49,12 @@ app.post("/charge", (req, res) => {
       customer: customer.id
     }))
   .catch(err => console.log("Error:", err))
-  .then(charge => res.render("charge.pug"));
+  .then(function(charge) {
+    var html = reactDOMServer.renderToString(
+        react.createElement(myComponent)
+    );
+    res.send(html);
+  });
 });
 
 app.listen(4567);

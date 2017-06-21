@@ -1,11 +1,15 @@
 {
   "main": "server.js",
   "dependencies": {
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.24.1",
     "body-parser": "",
     "dotenv": "^4.0.0",
     "express": "",
     "jquery": "^3.2.1",
     "pug": "",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "stripe": ""
   }
 }
