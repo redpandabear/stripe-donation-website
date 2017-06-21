@@ -50,8 +50,9 @@ app.post("/charge", (req, res) => {
     }))
   .catch(err => console.log("Error:", err))
   .then(function(charge) {
+    var props = {"amount": "$" + (charge.amount / 100).toFixed(2)};
     var html = reactDOMServer.renderToString(
-        react.createElement(myComponent)
+        react.createElement(myComponent, props)
     );
     res.send(html);
   });
