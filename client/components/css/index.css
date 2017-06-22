@@ -1,0 +1,22 @@
+body {
+    margin: 0px;
+}
+
+.header-banner {
+    width: 100%;
+    background-color: #ff3838;
+    height: 80px;
+    text-align: center;
+}
+
+.header-banner label {
+    font-family: Titillium Web;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+    letter-spacing: 1.06px;
+    text-transform: none;
+    line-height: 80px;
+    color: #fff;
+    margin: 20px auto;
+}

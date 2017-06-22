@@ -11,17 +11,22 @@ const stripe = require("stripe")(keySecret);
 const path = require("path");
 const react = require("react");
 const reactDOMServer = require("react-dom/server");
-const myComponent = require('./server/components/landing_page_fiat.jsx');
+const myComponent = require('./client/components/landing_page_fiat.jsx');
+const indexComponent = require('./client/components/index.jsx');
 
-app.set("view engine", "pug");
-app.use(require("body-parser").urlencoded({extended: false}));
+//app.set("view engine", "pug");
+// app.use(require("body-parser").urlencoded({extended: false}));
 //app.use(path.join(__dirname + '/client'));
-app.use(express.static(path.join(__dirname + '/client')));
+//app.use(express.static(path.join(__dirname + '/client')));
 
-app.get("/", (req, res) =>
-  res.sendFile(path.join(__dirname, 'client', 'index.html'))
-  // res.render("index.html", {keyPublishable})
-);
+app.get("/", function(req, res) {
+    var html = reactDOMServer.renderToString(
+        react.createElement(indexComponent)
+    );
+    res.send(html);
+});
+    //res.render("index.html", {keyPublishable})
+
 
 app.get("/public-data-key", function(req, res) {
     res.setHeader('Content-Type', 'application/json');
