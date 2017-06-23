@@ -2,14 +2,30 @@ var React = require('react');
 
 module.exports = React.createClass({
     render: function(){
+        var pageHeaderStyle = {
+            "width": "100%",
+            "background-color": "#ff3838",
+            "height": "80px",
+            "text-align": "center"
+        }
+        var pageHeaderTextStyle = {
+            "font-family": "Titillium Web",
+            "font-weight": "700",
+            "font-style": "normal",
+            "font-size": "30px",
+            "letter-spacing": "1.06px",
+            "text-transform": "none",
+            "line-height": "80px",
+            "color": "#fff",
+            "margin": "20px auto"
+        }
         return (
             <div>
                 <head>
-                    <link rel="stylesheet" href="./css/index.css"/>
                 </head>
                 <body>
-                <div class="header-banner">
-                    <label> Start Your Pledge Today </label>
+                <div style="{pageHeaderStyle}">
+                    <label style="{{pageHeaderTextStyle}}"> Start Your Pledge Today </label>
                 </div>
                 <div>
                     <form class='fiat-donation-form' action="/charge" method="post">
