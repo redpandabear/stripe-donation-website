@@ -12,10 +12,6 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-simple-dropdown": "^3.0.0",
-    "react-stylesheet": "^2.0.3",
     "stripe": ""
-  },
-  "devDependencies": {
-    "css-loader": "^0.28.4"
   }
 }

@@ -16,8 +16,8 @@ const indexComponent = require('./client/components/index.jsx');
 
 //app.set("view engine", "pug");
 // app.use(require("body-parser").urlencoded({extended: false}));
-// app.use(path.join(__dirname + '/client'));
-// app.use(express.static(path.join(__dirname + '/client')));
+//app.use(path.join(__dirname + '/client'));
+//app.use(express.static(path.join(__dirname + '/client')));
 
 app.get("/", function(req, res) {
     var html = reactDOMServer.renderToString(
