@@ -24,8 +24,7 @@ ControllerClick.prototype.initialize = function(){
 ControllerClick.prototype.openFiatDonation = function(element) {
     $('#error_explanation').html('');
     var amount = $('input#fiat-input-amount').val();
-    amount = amount.replace(/\$/g, '').replace(/\,/g, '')
-
+    amount = amount.replace(/\$/g, '').replace(/\,/g, '');
     amount = parseFloat(amount);
 
     if (isNaN(amount)) {
@@ -54,4 +53,15 @@ ControllerClick.prototype.startCryptoDonation = function(element){
 
 ControllerClick.prototype.changeCurrency = function(element){
     g_IndexView.toggleDisplayCurrencyList();
+}
+
+ControllerClick.prototype.selectCurrency = function(element){
+    var currency = $(element).attr("value");
+    console.log("Selecting Currency");
+    console.log(currency);
+    currencyDict = g_IndexView.getCurrencyDict();
+    $(".currencySelectionBox label").text(currencyDict[$(element).attr("value")]);
+    g_IndexView.hideCurrencyList();
+    g_IndexView.setSelectedCurrency(currency);
+    requestStripeToken();
 }
