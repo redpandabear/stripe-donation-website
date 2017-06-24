@@ -9,15 +9,19 @@ ControllerChange = function() {
 ControllerChange.prototype.initialize = function(){
     var self = this;
     $(document).ready(function() {
-        $('[controllerChangeFunction]').change(event, function () {
+        $('body').on('change', '[controllerChangeFunction]', function (event) {
             element = event.target;
             functionToCall = $(element).attr("controllerChangeFunction");
-            self[functionToCall](event);
+            if (typeof(functionToCall) !== 'undefined' && functionToCall !== null) {
+                self[functionToCall](this);
+            } else {
+                console.log("This code should be unreachable");
+            }
         });
     });
 }
 
-ControllerChange.prototype.onSetFiatPayAmount = function(event){
+ControllerChange.prototype.onSetFiatPayAmount = function(this){
     element = event.target;
     amount = Number(element.innerHTML)
     payAmount = parseInt(amount * 100)
