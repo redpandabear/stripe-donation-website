@@ -13,9 +13,9 @@ ControllerClick.prototype.initialize = function(){
         functionToCall = $(element).attr("controllerClickFunction");
         self[functionToCall](event);
     });
-}
+};
 
-ControllerClick.prototype.openFiatDonation = function(event){
+ControllerClick.prototype.openFiatDonation = function(event) {
     event.preventDefault();
     $('#error_explanation').html('');
     var amount = $('input#fiat-input-amount').val();
@@ -35,4 +35,18 @@ ControllerClick.prototype.openFiatDonation = function(event){
             amount: Math.round(amount)
         })
     }
+};
+
+ControllerClick.prototype.startFiatDonation = function(event){
+    g_IndexView.highlightFiatButton();
+    g_IndexView.showFiatDonationPanel();
+};
+
+ControllerClick.prototype.startCryptoDonation = function(event){
+    g_IndexView.highlightCryptoButton();
+    g_IndexView.showCryptoDonationPanel();
+};
+
+ControllerClick.prototype.changeCurrency = function(event){
+
 }

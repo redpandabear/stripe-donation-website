@@ -45,7 +45,7 @@ app.post("/charge", (req, res) => {
     stripe.charges.create({
       amount: amount,
       description: "Sample Charge",
-      currency: "usd",
+      currency: "eur",
       customer: customer.id
     }))
   .catch(err => console.log("Error:", err))
