@@ -24,13 +24,13 @@ IndexView.prototype.getInverseFromCurrencyDict = function(target){
 }
 
 IndexView.prototype.highlightFiatButton = function(){
-    $(".donateFiatButton").css("background-color", "#ff3838");
-    $(".donateCryptoButton").css("background-color", "#ffffff");
+    $(".donateFiatButton").css("background-color", "#ffffff");
+    $(".donateCryptoButton").css("background-color","#ff3838" );
 }
 
 IndexView.prototype.highlightCryptoButton = function(){
-    $(".donateFiatButton").css("background-color", "#ffffff");
-    $(".donateCryptoButton").css("background-color", "#ff3838");
+    $(".donateFiatButton").css("background-color", "#ff3838");
+    $(".donateCryptoButton").css("background-color","#ffffff" );
 }
 
 IndexView.prototype.showCryptoDonationPanel = function(){
