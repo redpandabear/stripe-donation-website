@@ -139,3 +139,15 @@ body {
 .cssHidden {
     display: none;
 }
+
+.cssCurrencySelectionListWrapper {
+    height: 90px;
+    overflow-y: auto;
+    width: 40px;
+    margin-bottom: 20px;
+}
+
+.cssCurrencyElement {
+    height: 30px;
+    line-height: 30px;
+}
