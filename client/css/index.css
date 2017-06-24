@@ -136,6 +136,6 @@ body {
     display: inline-block;
 }
 
-.cssStartHidden {
+.cssHidden {
     display: none;
 }

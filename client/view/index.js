@@ -34,15 +34,19 @@ IndexView.prototype.showFiatDonationPanel = function(){
 IndexView.prototype.getCurrencyDict = function(){
     // key : display format
     return {
-        "usd": "USD",
         "cad": "CAD",
         "eur": "EUR",
-        "gbp": "GBP"
+        "gbp": "GBP",
+        "usd": "USD",
     }
 }
 
 IndexView.prototype.toggleDisplayCurrencyList = function(){
-
+    if ($(".currencySelectionListWrapper").hasClass("cssHidden")) {
+        $(".currencySelectionListWrapper").removeClass("cssHidden");
+    } else {
+        $(".currencySelectionListWrapper").addClass("cssHidden");
+    }
 }
 
 IndexView.prototype.populateCurrencyList = function(){
@@ -50,7 +54,7 @@ IndexView.prototype.populateCurrencyList = function(){
     currencyList = this.getCurrencyDict();
     currencyListKeys = Object.keys(currencyList);
     for(var i = 0; i < currencyListKeys.length;i++) {
-        element = "<div class='currencyElement cssCurrencyElement cssStartHidden'><label>" + currencyList[currencyListKeys[i]] + "</label></div>"
+        element = "<div class='currencyElement cssCurrencyElement'><label>" + currencyList[currencyListKeys[i]] + "</label></div>"
         $(".currencySelectorList").append(element);
     }
 

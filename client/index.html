@@ -21,8 +21,10 @@
                         <div class="cssCurrencySelector"><label>CAD</label></div>
                         <div class="cssCurrencySelectionImage"></div>
                     </div>
-                    <div class="currencySelectorList cssCurrencySelectorList"></div>
                     <input type="number" name="amount" id="fiat-input-amount" class="paymentAmount" controllerChangeFunction="onSetFiatPayAmount"/>
+                </div>
+                <div class="currencySelectionListWrapper cssCurrencySelectionListWrapper cssHidden">
+                    <div class="currencySelectorList cssCurrencySelectorList"></div>
                 </div>
                 <button id="donateButton" controllerClickFunction="openFiatDonation">Donate</button>
             </div>

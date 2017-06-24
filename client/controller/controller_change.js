@@ -8,10 +8,12 @@ ControllerChange = function() {
 
 ControllerChange.prototype.initialize = function(){
     var self = this;
-    $('[controllerChangeFunction]').change(event, function() {
-        element = event.target;
-        functionToCall = $(element).attr("controllerChangeFunction");
-        self[functionToCall](event);
+    $(document).ready(function() {
+        $('[controllerChangeFunction]').change(event, function () {
+            element = event.target;
+            functionToCall = $(element).attr("controllerChangeFunction");
+            self[functionToCall](event);
+        });
     });
 }
 

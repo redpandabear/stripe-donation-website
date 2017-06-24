@@ -8,10 +8,16 @@ ControllerClick = function() {
 
 ControllerClick.prototype.initialize = function(){
     var self = this;
-    $('[controllerClickFunction]').click(event, function() {
-        element = event.target;
-        functionToCall = $(element).attr("controllerClickFunction");
-        self[functionToCall](event);
+    $(document).ready(function() {
+        $('body').on('click', '[controllerClickFunction]', function (event) {
+            element = event.target;
+            functionToCall = $(this).attr("controllerClickFunction");
+            if (typeof(functionToCall) !== 'undefined' && functionToCall !== null) {
+                self[functionToCall](event);
+            } else {
+                console.log("This code should be unreachable");
+            }
+        });
     });
 };
 
@@ -48,5 +54,5 @@ ControllerClick.prototype.startCryptoDonation = function(event){
 };
 
 ControllerClick.prototype.changeCurrency = function(event){
-
+    g_IndexView.toggleDisplayCurrencyList();
 }
