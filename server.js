@@ -18,6 +18,13 @@ app.use(require("body-parser").urlencoded({extended: false}));
 //app.use(path.join(__dirname + '/client'));
 app.use(express.static(path.join(__dirname + '/client')));
 
+currencyDict = {
+    "cad": "CAD",
+    "eur": "EUR",
+    "gbp": "GBP",
+    "usd": "USD",
+};
+
 app.get("/", (req, res) =>
   res.sendFile(path.join(__dirname, 'client', 'index.html'))
   // res.render("index.html", {keyPublishable})
@@ -36,6 +43,8 @@ app.post("/charge", (req, res) => {
   // TODO: Make sure that req.body actually contains data from the checkout box
   var self = this;
   const amount = req.body.amount * 100;
+  const selectedCurrency = req.body.currency;
+  const currencyString = currencyDict[selectedCurrency];
   
   stripe.customers.create({
     email: req.body.stripeEmail,
@@ -45,12 +54,12 @@ app.post("/charge", (req, res) => {
     stripe.charges.create({
       amount: amount,
       description: "Sample Charge",
-      currency: "eur",
+      currency: selectedCurrency,
       customer: customer.id
     }))
   .catch(err => console.log("Error:", err))
   .then(function(charge) {
-    var props = {"amount": "$" + (charge.amount / 100).toFixed(2)};
+    var props = {"amount": (charge.amount / 100).toFixed(2), "currency": currencyString};
     var html = reactDOMServer.renderToString(
         react.createElement(myComponent, props)
     );

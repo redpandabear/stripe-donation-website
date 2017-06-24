@@ -90,4 +90,5 @@ IndexView.prototype.getSelectedCurrency = function(){
 
 IndexView.prototype.addCurrencyToStripeHandler = function(currency){
     handler["currency"] = g_IndexView.getSelectedCurrency();
+    requestStripeToken();
 }
