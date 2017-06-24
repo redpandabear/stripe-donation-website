@@ -11,13 +11,17 @@ body {
     line-height: 1.1em;
     color: #fff;
     margin: 20px auto;
+    word-wrap: break-word;
+    position: relative;
+    top: 30%;
+    transform: translateY(-50%);
 }
 
 .cssPageHeaderTitle {
     background-color: #ff3838;
     border-color: #ff3838;
     text-align: center;
-    line-height: 200px;
+    line-height: 35px;
     height: 200px;
 }
 
