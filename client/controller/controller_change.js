@@ -21,10 +21,9 @@ ControllerChange.prototype.initialize = function(){
     });
 }
 
-ControllerChange.prototype.onSetFiatPayAmount = function(this){
-    element = event.target;
-    amount = Number(element.innerHTML)
-    payAmount = parseInt(amount * 100)
+ControllerChange.prototype.onSetFiatPayAmount = function(element){
+    amount = Number(element.innerHTML);
+    payAmount = parseInt(amount * 100);
     $(".stripe-button").attr("data-amount", payAmount);
 }
 
