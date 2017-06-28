@@ -11,7 +11,7 @@ const stripe = require("stripe")(keySecret);
 const path = require("path");
 const react = require("react");
 const reactDOMServer = require("react-dom/server");
-const myComponent = require('./server/components/landing_page_fiat.jsx');
+const myComponent = require('./client/components/landing_page_fiat.jsx');
 
 app.set("view engine", "pug");
 app.use(require("body-parser").urlencoded({extended: false}));
