@@ -13,10 +13,19 @@ const react = require("react");
 const reactDOMServer = require("react-dom/server");
 const myComponent = require('./client/components/landing_page_fiat.jsx');
 
-app.set("view engine", "pug");
+app.use(express.static('public'));
 app.use(require("body-parser").urlencoded({extended: false}));
 //app.use(path.join(__dirname + '/client'));
 app.use(express.static(path.join(__dirname + '/client')));
+app.use(function (req, res, next) {
+    res.renderWithData = function (view, model, data) {
+        res.render(view, model, function (err, viewString) {
+            data.view = viewString;
+            res.json(data);
+        });
+    };
+    next();
+});
 
 currencyDict = {
     "cad": "CAD",
@@ -59,6 +68,7 @@ app.post("/charge", (req, res) => {
     }))
   .catch(err => console.log("Error:", err))
   .then(function(charge) {
+      // Need to use react because the page needs to be rendered with values
     var props = {"amount": (charge.amount / 100).toFixed(2), "currency": currencyString};
     var html = reactDOMServer.renderToString(
         react.createElement(myComponent, props)

@@ -4,6 +4,10 @@
 var hostName = "localhost:4567";
 var handler = null;
 
+require('babel-register')({
+   presets: ['react']
+});
+
 requestStripeToken = function() {
     jQuery.getJSON('http://' + hostName + "/public-data-key", {}, function (data) {
         handler = StripeCheckout.configure({
