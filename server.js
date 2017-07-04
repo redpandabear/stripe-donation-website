@@ -13,7 +13,6 @@ const react = require("react");
 const reactDOMServer = require("react-dom/server");
 const myComponent = require('./client/components/landing_page_fiat.jsx');
 
-app.set("view engine", "pug");
 app.use(require("body-parser").urlencoded({extended: false}));
 //app.use(path.join(__dirname + '/client'));
 app.use(express.static(path.join(__dirname + '/client')));
