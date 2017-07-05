@@ -3,6 +3,8 @@
   "dependencies": {
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
+    "bitauth": "^0.3.2",
+    "bitpay-rest": "^0.3.1",
     "body-parser": "",
     "dotenv": "^4.0.0",
     "express": "",
@@ -10,6 +12,6 @@
     "pug": "",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "stripe": ""
+    "stripe": "^4.23.1"
   }
 }

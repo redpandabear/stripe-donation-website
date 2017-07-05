@@ -9,6 +9,7 @@ IndexView = function() {
 IndexView.prototype.initialize = function(){
     this.highlightFiatButton();
     this.populateCurrencyList();
+    $(".cryptoDonationPanel").hide();
     this._selectedCurrency = this.getInverseFromCurrencyDict($(".currencySelectionBox label").text());
 }
 
