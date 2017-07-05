@@ -35,10 +35,14 @@
             <script src="https://checkout.stripe.com/checkout.js"></script>
         </form>
     </div>
-    <div class="cryptoDonationPanel cssCryptoDonatePanel">
-        <input id="bitcoinEmail" name="bitcoinToken" type="hidden"/> <!-- Used when the form is submitted -->
-        <input id="bitcoinAmount" name="bitcoinAmount" type="hidden"/> <!-- Used when the form is submitted -->
-        <button id=""> donation </button>
+    <div class="cryptoDonationPanel cssCryptoDonatePanel cssHidden">
+        <div class="cssDonateVisibleElements">
+            <label class="paymentAmount-label"> What is your email? </label>
+            <input id="bitcoinEmail" name="bitcoinToken"/> <!-- Used when the form is submitted -->
+            <label class="paymentAmount-label"> How much bitcoin would you like to pledge? </label>
+            <input id="bitcoinAmount" name="bitcoinAmount"/> <!-- Used when the form is submitted -->
+            <button id=""> donate </button>
+        </div>
     </div>
 </div>
 <!-- Scripts begin here -->
