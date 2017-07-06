@@ -1,0 +1,2 @@
+Deployment to Heroku is done automatically from the 'release' branch of the github repository
+Ensure that the correct environment variables are setup for the node project to enable stripe
