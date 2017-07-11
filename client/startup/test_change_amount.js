@@ -3,7 +3,7 @@
  */
 // TODO: make host name generic as in react
 //var hostName = "localhost:4567";
-var hostname = 'lit-journey-78750.herokuapp.com'
+var hostName = 'lit-journey-78750.herokuapp.com'
 var handler = null;
 
 requestStripeToken = function() {
