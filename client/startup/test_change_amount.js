@@ -1,11 +1,13 @@
 /**
  * Created by danielbruce on 2017-06-08.
  */
-var hostName = "localhost:4567";
+// TODO: make host name generic as in react
+//var hostName = "localhost:4567";
+var hostname = 'lit-journey-78750.herokuapp.com'
 var handler = null;
 
 requestStripeToken = function() {
-    jQuery.getJSON('http://' + hostName + "/public-data-key", {}, function (data) {
+    jQuery.getJSON('https://' + hostName + "/public-data-key", {}, function (data) {
         handler = StripeCheckout.configure({
             key: data.key,
             locale: 'auto',
