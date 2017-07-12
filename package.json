@@ -1,17 +1,22 @@
 {
-  "main": "server.js",
+  "name": "Collider-X-Donations",
+  "version": "0.0.1",
   "dependencies": {
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
     "bitauth": "^0.3.2",
     "bitpay-rest": "^0.3.1",
-    "body-parser": "",
+    "body-parser": "^1.17.2",
     "dotenv": "^4.0.0",
-    "express": "",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
     "jquery": "^3.2.1",
     "pug": "",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "stripe": "^4.23.1"
+  },
+  "scripts": {
+    "start": "node server.js"
   }
 }
