@@ -1,7 +1,9 @@
 /**
  * Created by danielbruce on 2017-06-08.
  */
-var hostName = "localhost:4567";
+
+//var hostName = "localhost:4567";
+var hostName = 'lit-journey-78750.herokuapp.com'
 var handler = null;
 
 requestStripeToken = function() {

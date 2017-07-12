@@ -72,4 +72,4 @@ app.post("/charge", (req, res) => {
   });
 });
 
-app.listen(4567);
+app.listen(process.env.PORT || 4567);
