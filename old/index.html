@@ -1,10 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../client/css/index.css">
 </head>
 <body>
-
+<div class="cssPageHeaderTitle">
+    <label class="cssPageHeaderTitleText">Thank You For Your Considering A Pledge To Collider-X Ham </label>
+</div>
+<div class="cssSelectionOptions">
+    <div class="donateFiatButton cssDonateFiatButton cssPledgeOptionButton" controllerClickFunction="startFiatDonation"><label class="cssPledgeLabel"> Pledge in Fiat</label></div>
+    <div class="donateCryptoButton cssDonateCryptoButton cssPledgeOptionButton" controllerClickFunction="startCryptoDonation"><label class="cssPledgeLabel"> Pledge in Bitcoin</label></div>
+</div>
+<div class="cssDonationPanels">
+    <div class="fiatDonationPanel cssFiatDonatePanel">
+        <form class='fiat-donation-form' action="/charge" method="post">
+            <div class="cssDonateVisibleElements">
+                <label class="paymentAmount-label"> How much would you like to contribute? </label>
+                <div class="cssContributionBox">
+                    <div class="currencySelectionBox cssCurrencySelectionBox" controllerClickFunction="changeCurrency">
+                        <div class="cssCurrencySelector"><label>CAD</label></div>
+                        <div class="cssCurrencySelectionImage"></div>
+                    </div>
+                    <input type="number" name="amount" id="fiat-input-amount" class="paymentAmount" controllerChangeFunction="onSetFiatPayAmount"/>
+                </div>
+                <div class="currencySelectionListWrapper cssCurrencySelectionListWrapper cssHidden">
+                    <div class="currencySelectorList cssCurrencySelectorList"></div>
+                </div>
+                <button id="donateButton" controllerClickFunction="openFiatDonation">Donate</button>
+            </div>
+            <input id="stripeToken" name="stripeToken" type="hidden"> <!-- Used when the form is submitted -->
+            <input id="stripeEmail" name="stripeEmail" type="hidden"> <!-- Used when the form is submitted -->
+            <input id="currency" name="currency" type="hidden"> <!-- Used when the form is submitted -->
+            <label type="text" id="error_explanation"></label>
+            <script src="https://checkout.stripe.com/checkout.js"></script>
+        </form>
+    </div>
+    <div class="cryptoDonationPanel cssCryptoDonatePanel cssHidden">
+        <div class="cssDonateVisibleElements">
+            <label class="paymentAmount-label"> What is your email? </label>
+            <input id="bitcoinEmail" name="bitcoinToken"/> <!-- Used when the form is submitted -->
+            <label class="paymentAmount-label"> How much bitcoin would you like to pledge? </label>
+            <input id="bitcoinAmount" name="bitcoinAmount"/> <!-- Used when the form is submitted -->
+            <button id=""> donate </button>
+        </div>
+    </div>
+</div>
+<!-- Scripts begin here -->
+<script src="../client/third_party/jquery-3.2.1.min.js"></script>
+<script src="../client/controller/setup_controller.js"></script>
+<script src="../client/controller/controller_change.js"></script>
+<script src="../client/controller/controller_click.js"></script>
+<script src="../client/view/index.js"></script>
+<script src="../client/global/global_variables.js"></script>
+<script src="../client/startup/test_change_amount.js"></script>
+<!-- Scripts end here -->
 </body>
 </html>

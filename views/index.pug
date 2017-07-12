@@ -1,0 +1,56 @@
+//
+   Created by danielbruce on 2017-07-11.
+
+doctype html
+html
+    head
+        title Collider-X
+        link(rel='stylesheet', type='text/css', href='./css/index.css')
+    body
+        .cssPageHeaderTitle
+            label.cssPageHeaderTitleText Thank You For Your Considering A Pledge To Collider-X
+        .cssSelectionOptions
+            .donateFiatButton.cssDonateFiatButton.cssPledgeOptionButton(controllerclickfunction='startFiatDonation')
+                label.cssPledgeLabel  Pledge in Fiat
+            .donateCryptoButton.cssDonateCryptoButton.cssPledgeOptionButton(controllerclickfunction='startCryptoDonation')
+                label.cssPledgeLabel  Pledge in Bitcoin
+        .cssDonationPanels
+            .fiatDonationPanel.cssFiatDonatePanel
+                form.fiat-donation-form(action='/charge', method='post')
+                    .cssDonateVisibleElements
+                        label.paymentAmount-label  How much would you like to contribute?
+                        .cssContributionBox
+                            .currencySelectionBox.cssCurrencySelectionBox(controllerclickfunction='changeCurrency')
+                                .cssCurrencySelector
+                                    label CAD
+                                .cssCurrencySelectionImage
+                            input#fiat-input-amount.paymentAmount(type='number', name='amount', controllerchangefunction='onSetFiatPayAmount')
+                        .currencySelectionListWrapper.cssCurrencySelectionListWrapper.cssHidden
+                            .currencySelectorList.cssCurrencySelectorList
+                        button#donateButton(controllerclickfunction='openFiatDonation') Donate
+                    input#stripeToken(name='stripeToken', type='hidden')
+                    // Used when the form is submitted
+                    input#stripeEmail(name='stripeEmail', type='hidden')
+                    // Used when the form is submitted
+                    input#currency(name='currency', type='hidden')
+                    // Used when the form is submitted
+                    label#error_explanation(type='text')
+                    script(src='https://checkout.stripe.com/checkout.js')
+            .cryptoDonationPanel.cssCryptoDonatePanel.cssHidden
+                .cssDonateVisibleElements
+                    label.paymentAmount-label  What is your email?
+                    input#bitcoinEmail(name='bitcoinToken')
+                    // Used when the form is submitted
+                    label.paymentAmount-label  How much bitcoin would you like to pledge?
+                    input#bitcoinAmount(name='bitcoinAmount')
+                    // Used when the form is submitted
+                    button(id='')  donate
+        // Scripts begin here
+        script(src='third_party/jquery-3.2.1.min.js')
+        script(src='controller/setup_controller.js')
+        script(src='controller/controller_change.js')
+        script(src='controller/controller_click.js')
+        script(src='view/index.js')
+        script(src='./global/global_variables.js')
+        script(src='startup/test_change_amount.js')
+        // Scripts end here

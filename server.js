@@ -16,6 +16,8 @@ const myComponent = require('./client/components/landing_page_fiat.jsx');
 app.use(require("body-parser").urlencoded({extended: false}));
 //app.use(path.join(__dirname + '/client'));
 app.use(express.static(path.join(__dirname + '/client')));
+app.set("view engine", "pug");
+app.use(express.static('public'));
 
 currencyDict = {
     "cad": "CAD",
@@ -25,7 +27,8 @@ currencyDict = {
 };
 
 app.get("/", (req, res) =>
-  res.sendFile(path.join(__dirname, 'client', 'index.html'))
+    res.render("index")
+    //res.sendFile(path.join(__dirname, 'client', 'index.html'))
   // res.render("index.html", {keyPublishable})
 );
 
