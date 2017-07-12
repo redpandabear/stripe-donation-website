@@ -9,13 +9,14 @@ const express = require('express');
 const app = express();
 const stripe = require("stripe")(keySecret);
 const path = require("path");
-const react = require("react");
-const reactDOMServer = require("react-dom/server");
-const myComponent = require('./client/components/landing_page_fiat.jsx');
+//const react = require("react");
+//const reactDOMServer = require("react-dom/server");
+//const myComponent = require('./client/components/landing_page_fiat.jsx');
 
+app.use(express.static('public'));
 app.use(require("body-parser").urlencoded({extended: false}));
 //app.use(path.join(__dirname + '/client'));
-app.use(express.static(path.join(__dirname + '/client')));
+//app.use(express.static(path.join(__dirname + '/client')));
 app.set('view engine', 'pug');
 app.set("views", path.join(__dirname, "views"));
 
