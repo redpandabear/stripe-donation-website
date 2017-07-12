@@ -25,8 +25,13 @@ currencyDict = {
     "usd": "USD",
 };
 
-app.get("/", (req, res) =>
-    res.render("index")
+app.get("/", function(req, res) {
+        if (process.env.PORT) {// check to see if we are working in production
+            res.render("index", {environment: "heroku"});
+        } else {
+            res.render("index", {environment: "development"});
+        }
+    }
     //res.sendFile(path.join(__dirname, 'client', 'index.html'))
   // res.render("index.html", {keyPublishable})
 );

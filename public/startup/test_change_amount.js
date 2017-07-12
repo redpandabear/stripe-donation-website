@@ -2,10 +2,13 @@
  * Created by danielbruce on 2017-06-08.
  */
 
-//var hostName = "localhost:4567";
-var hostName = 'lit-journey-78750.herokuapp.com'
-var handler = null;
+if ($("#environment").text() === "development"){
+    var hostName = "localhost:4567"; // development
+} else {
+    var hostName = 'lit-journey-78750.herokuapp.com' // production
+}
 
+var handler = null;
 requestStripeToken = function() {
     jQuery.getJSON('http://' + hostName + "/public-data-key", {}, function (data) {
         handler = StripeCheckout.configure({
