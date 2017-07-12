@@ -27,8 +27,9 @@ currencyDict = {
 };
 
 app.get("/", (req, res) =>
-  res.sendFile(path.join(__dirname, 'client', 'index.html'))
+  // res.sendFile(path.join(__dirname, 'client', 'index.html'))
   // res.render("index.html", {keyPublishable})
+  res.render("index", {})
 );
 
 app.get("/public-data-key", function(req, res) {
