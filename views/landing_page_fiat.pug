@@ -3,8 +3,11 @@
 html
     head
         title Collider-X-Pug
+        link(rel='stylesheet', type='text/css', href='./css/index.css')
     body
         div
-            h1  Thank You For Your Donation!
-            p
-                | You just donated #{amount} in #{currency} to the Blockchain research and development hub. As a sponsor, we will ensure that you enjoy all of the perks and benefits of our Blockchain R&D hub and that our research efforts will reflect your contributions.
+            .cssPageHeaderTitle
+                label.cssPageHeaderTitleText Thank You For Your Donation!
+            .cssDonateVisibleElements
+                label.paymentAmount-label
+                    | You just donated #{amount} in #{currency} to the Blockchain research and development hub. As a sponsor, we will ensure that you enjoy all of the perks and benefits of our Blockchain R&D hub and that our research efforts will reflect your contributions.
