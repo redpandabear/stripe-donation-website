@@ -60,11 +60,15 @@ app.post("/charge", (req, res) => {
     }))
   .catch(err => console.log("Error:", err))
   .then(function(charge) {
-    var props = {"amount": (charge.amount / 100).toFixed(2), "currency": currencyString};
-    var html = reactDOMServer.renderToString(
-        react.createElement(myComponent, props)
-    );
-    res.send(html);
+    //var props = {"amount": (charge.amount / 100).toFixed(2), "currency": currencyString};
+    //var html = reactDOMServer.renderToString(
+    //    react.createElement(myComponent, props)
+    //);
+    //res.send(html);
+    res.render("landing_page_fiat", {
+        amount:(charge.amount / 100).toFixed(2),
+        currency: currencyString
+    })
   });
 });
 
