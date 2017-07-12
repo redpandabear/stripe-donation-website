@@ -16,6 +16,8 @@ const myComponent = require('./client/components/landing_page_fiat.jsx');
 app.use(require("body-parser").urlencoded({extended: false}));
 //app.use(path.join(__dirname + '/client'));
 app.use(express.static(path.join(__dirname + '/client')));
+app.set('view engine', 'pug');
+app.set("views", path.join(__dirname, "views"));
 
 currencyDict = {
     "cad": "CAD",
@@ -58,11 +60,15 @@ app.post("/charge", (req, res) => {
     }))
   .catch(err => console.log("Error:", err))
   .then(function(charge) {
-    var props = {"amount": (charge.amount / 100).toFixed(2), "currency": currencyString};
-    var html = reactDOMServer.renderToString(
-        react.createElement(myComponent, props)
-    );
-    res.send(html);
+      res.render("landing_page_fiat", {
+          amount: charge.amount,
+          currency: currencyString
+      });
+      //var props = {"amount": (charge.amount / 100).toFixed(2), "currency": currencyString};
+      //var html = reactDOMServer.renderToString(
+      //    react.createElement(myComponent, props)
+      //);
+      //res.send(html);
   });
 });
 
