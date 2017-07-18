@@ -5,6 +5,7 @@ require('dotenv').load();
 const keyPublishable = process.env.STRIPE_PUBLISHABLE_KEY;
 const keySecret = process.env.STRIPE_SECRET_KEY;
 
+const fs = require('fs');
 const express = require('express');
 const app = express();
 const stripe = require("stripe")(keySecret);
@@ -82,6 +83,38 @@ app.post("/charge", (req, res) => {
         currency: currencyString // Here we replace the 'currency' on the pug page with the user input
     })
   });
+});
+
+app.post("/create-invoice", (req, res) => {
+    var bitpay = require('bitpay-node-client');
+    // need bitauth for authentication purpose
+    var bitauth = require('bitauth');
+    console.log(__dirname);
+    const privateKeyFilename = path.join(__dirname + "/bitpay/keys", 'local.pem')
+    const encryptedPrivateKey = fs.readFileSync(privateKeyFilename, 'utf8')
+    //The first param is the password that was supplied when you created the key
+    var privkey = bitauth.decrypt('', encryptedPrivateKey);
+
+    var client = bitpay.createClient(privkey);
+    client.on('error', function(err) {
+        // handle client errors here
+        console.log(err);
+    });
+
+    client.on('ready', function(){
+        var data = { price: 100, currency: 'USD' };
+
+        client.as('merchant').post('invoices', data, function(err, invoice) {
+            if (err){
+                // error handling
+                console.log(err);
+            }
+            else{
+                // on success
+                console.log('invoice data', invoice);
+            }
+        });
+    });
 });
 
 // TODO: When we get the certificate then we will replace http with https
