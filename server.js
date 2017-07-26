@@ -90,8 +90,8 @@ app.post("/create-invoice", (req, res) => {
     // need bitauth for authentication purpose
     var bitauth = require('bitauth');
     console.log(__dirname);
-    const privateKeyFilename = path.join(__dirname + "/bitpay/keys", 'local.pem')
-    const encryptedPrivateKey = fs.readFileSync(privateKeyFilename, 'utf8')
+    const privateKeyFilename = path.join(__dirname + "/bitpay/keys", 'local.pem');
+    const encryptedPrivateKey = process.env.BITPAY_PRIVATE_KEY || fs.readFileSync(privateKeyFilename, 'utf8'); // Done for deployment on Heroku
     //The first param is the password that was supplied when you created the key
     var privkey = bitauth.decrypt('', encryptedPrivateKey);
 
