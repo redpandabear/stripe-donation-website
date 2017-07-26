@@ -103,9 +103,7 @@ app.post("/create-invoice", (req, res) => {
 
     client.on('ready', function(){
         var amount = parseFloat(req.body.bitcoinAmount);
-        var email = String(req.body.bitcoinEmail);
         var data = { price: amount, currency: 'BTC' };
-
         client.as('merchant').post('invoices', data, function(err, invoice) {
             if (err){
                 // error handling
