@@ -86,7 +86,7 @@ app.post("/charge", (req, res) => {
 });
 
 app.post("/create-invoice", (req, res) => {
-    var bitpay = require('bitpay-node-client');
+    var bitpay = require('bitpay-rest');
     // need bitauth for authentication purpose
     var bitauth = require('bitauth');
     console.log(__dirname);
@@ -102,7 +102,9 @@ app.post("/create-invoice", (req, res) => {
     });
 
     client.on('ready', function(){
-        var data = { price: 100, currency: 'USD' };
+        var amount = parseFloat(req.body.bitcoinAmount);
+        var email = String(req.body.bitcoinEmail);
+        var data = { price: amount, currency: 'BTC' };
 
         client.as('merchant').post('invoices', data, function(err, invoice) {
             if (err){
@@ -111,7 +113,9 @@ app.post("/create-invoice", (req, res) => {
             }
             else{
                 // on success
+                // TODO: Save the email here with the url address so that we know who contributed
                 console.log('invoice data', invoice);
+                res.redirect(invoice.url);
             }
         });
     });

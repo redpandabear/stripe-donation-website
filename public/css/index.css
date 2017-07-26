@@ -41,7 +41,7 @@ body {
     float: left;
     width: 50%;
     height: 100%;
-    line-height: 80px;
+    line-height: 10px;
     vertical-align: middle;
     text-align: center;
     border: 1px;
@@ -51,7 +51,7 @@ body {
     float: right;
     width: 50%;
     height: 100%;
-    line-height: 80px;
+    line-height: 10px;
     vertical-align: middle;
     text-align: center;
     border: 1px;
@@ -64,6 +64,18 @@ body {
     line-height: 1.6em;
     color: rgba(26,26,26,.7);
     font-family: Titillium Web;
+    position: relative;
+    top: 20px;
+}
+
+@media screen and (max-width: 345px){
+    .cssSelectionOptions {
+        height: 110px;
+    }
+
+    .cssPageHeaderTitle {
+        height: 250px;
+    }
 }
 
 .cssPledgeOptionButton {

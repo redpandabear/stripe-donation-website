@@ -26,7 +26,7 @@ html
                                 .cssCurrencySelector
                                     label CAD
                                 .cssCurrencySelectionImage
-                            input#fiat-input-amount.paymentAmount(type='number', name='amount', controllerchangefunction='onSetFiatPayAmount')
+                            input#fiat-input-amount.paymentAmount(type='number', name='amount', controllerchangefunction='onSetFiatPayAmount', placeholder='100')
                         .currencySelectionListWrapper.cssCurrencySelectionListWrapper.cssHidden
                             .currencySelectorList.cssCurrencySelectorList
                         button#donateButton(controllerclickfunction='openFiatDonation') Donate
@@ -42,10 +42,10 @@ html
                 .cssDonateVisibleElements
                     form.crypto-donation-form(action='/create-invoice', method='post')
                         label.paymentAmount-label  What is your email?
-                        input#bitcoinEmail(name='bitcoinToken')
+                        input#bitcoinEmail(name='bitcoinEmail', placeholder='john@example.com')
                         // Used when the form is submitted
                         label.paymentAmount-label  How much bitcoin would you like to pledge?
-                        input#bitcoinAmount(name='bitcoinAmount')
+                        input#bitcoinAmount(name='bitcoinAmount', placeholder='0.1')
                         // Used when the form is submitted
                         button(id='')  donate
         // Scripts begin here
