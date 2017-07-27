@@ -6,8 +6,7 @@ const keyPublishable = process.env.STRIPE_PUBLISHABLE_KEY;
 const keySecret = process.env.STRIPE_SECRET_KEY;
 
 const fs = require('fs');
-const express = require('express');
-const app = express();
+
 const stripe = require("stripe")(keySecret);
 const path = require("path");
 const react = require("react");
@@ -15,20 +14,9 @@ const reactDOMServer = require("react-dom/server");
 const myComponent = require('./client/components/landing_page_fiat.jsx');
 const http = require('http');
 const https = require('https');
-const port = process.env.PORT || 4567; // Set the port number (dependent on whether code is in development or production)
 
-var host = "";
-if (port === 4567){ // Set the host to the proper local (might not be used yet, but useful information)
-    host = "https://localhost:"; // development
-} else {
-    host = "https://lit-journey-78750.herokuapp.com"; // production
-}
-
-// TODO: remove client folder
-app.use(require("body-parser").urlencoded({extended: false}));
-//app.use(path.join(__dirname + '/client'));
-app.set("view engine", "pug"); // Setting the view engine to Pug
-app.use(express.static('public')); // Allowing rendered pages to access resources in public directory
+const port = require('./server/port-setup.js')
+const app = require('./server/app-setup.js');
 
 currencyDict = { // A mapping from the symbol used for stripe to the symbol the user sees
     "cad": "CAD",
@@ -45,7 +33,7 @@ app.get("/", function(req, res) {
         }
     }
     //res.sendFile(path.join(__dirname, 'client', 'index.html'))
-  // res.render("index.html", {keyPublishable})
+    // res.render("index.html", {keyPublishable})
 );
 
 app.get("/public-data-key", function(req, res) {
