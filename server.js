@@ -1,17 +1,18 @@
-require('babel-register')({
+/*require('babel-register')({
     presets: ['react']
-});
+});*/
 require('dotenv').load();
 const keyPublishable = process.env.STRIPE_PUBLISHABLE_KEY;
 const keySecret = process.env.STRIPE_SECRET_KEY;
+console.log("Publishable stripe key:");
+console.log(keyPublishable);
 
 const fs = require('fs');
-
 const stripe = require("stripe")(keySecret);
 const path = require("path");
-const react = require("react");
+/*const react = require("react");
 const reactDOMServer = require("react-dom/server");
-const myComponent = require('./client/components/landing_page_fiat.jsx');
+const myComponent = require('./client/components/landing_page_fiat.jsx');*/
 const http = require('http');
 const https = require('https');
 

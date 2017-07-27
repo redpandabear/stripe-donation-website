@@ -19,6 +19,4 @@ app.use(require("body-parser").urlencoded({extended: false}));
 app.set("view engine", "pug"); // Setting the view engine to Pug
 app.use(express.static('public')); // Allowing rendered pages to access resources in public directory
 
-
-
 module.exports = app;
