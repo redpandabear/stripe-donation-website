@@ -1,14 +1,14 @@
 /*require('babel-register')({
     presets: ['react']
 });*/
-require('dotenv').load();
-const keyPublishable = process.env.STRIPE_PUBLISHABLE_KEY;
-const keySecret = process.env.STRIPE_SECRET_KEY;
+
+// Stripe Setup
+const stripeData = require('./server/stripe-data.js');
 console.log("Publishable stripe key:");
-console.log(keyPublishable);
+console.log(stripeData.publishableKey);
 
 const fs = require('fs');
-const stripe = require("stripe")(keySecret);
+const stripe = require("stripe")(stripeData.privateKey);
 const path = require("path");
 /*const react = require("react");
 const reactDOMServer = require("react-dom/server");
@@ -28,12 +28,12 @@ app.get("/", function(req, res) {
         }
     }
     //res.sendFile(path.join(__dirname, 'client', 'index.html'))
-    // res.render("index.html", {keyPublishable})
+    // res.render("index.html", {stripeData.publishableKey})
 );
 
 app.get("/public-data-key", function(req, res) {
     res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({"key": keyPublishable}));
+    res.send(JSON.stringify({"key": stripeData.publishableKey}));
 });
 
 app.post("/charge", (req, res) => {
