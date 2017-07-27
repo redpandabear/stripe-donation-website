@@ -1,6 +1,11 @@
-/*require('babel-register')({
+/* //TODO: IMPLEMENT REACT STUFF LATER
+require('babel-register')({
     presets: ['react']
-});*/
+});
+const react = require("react");
+const reactDOMServer = require("react-dom/server");
+const myComponent = require('./client/components/landing_page_fiat.jsx');
+*/
 
 // Stripe Setup
 const stripeData = require('./server/stripe-data.js');
@@ -12,26 +17,13 @@ const currencyDict = require('./server/currency-dictionary.js')
 const fs = require('fs');
 const stripe = require("stripe")(stripeData.keySecret);
 const path = require("path");
-/*const react = require("react");
-const reactDOMServer = require("react-dom/server");
-const myComponent = require('./client/components/landing_page_fiat.jsx');*/
+
 const http = require('http');
 const https = require('https');
 const port = require('./server/port-setup.js');
 const app = require('./server/app-setup.js');
 
 require('./server/environment-development-production.js');
-
-app.get("/", function(req, res) {
-        if (process.env.PORT) {// check to see if we are working in production
-            res.render("index", {environment: "heroku"}); // Render the main donation page using pug
-        } else {
-            res.render("index", {environment: "development"}); // Render the main donation page using pug
-        }
-    }
-    //res.sendFile(path.join(__dirname, 'client', 'index.html'))
-    // res.render("index.html", {stripeData.publishableKey})
-);
 
 app.get("/public-data-key", function(req, res) {
     res.setHeader('Content-Type', 'application/json');
