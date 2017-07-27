@@ -7,13 +7,10 @@ const reactDOMServer = require("react-dom/server");
 const myComponent = require('./client/components/landing_page_fiat.jsx');
 */
 
-// Stripe Setup
 const stripeData = require('./server/stripe-data.js');
-console.log("Publishable stripe key:");
-console.log(stripeData.keyPublishable);
+
 // Currency data
 const currencyDict = require('./server/currency-dictionary.js')
-
 const fs = require('fs');
 const stripe = require("stripe")(stripeData.keySecret);
 const path = require("path");
@@ -23,12 +20,10 @@ const https = require('https');
 const port = require('./server/port-setup.js');
 const app = require('./server/app-setup.js');
 
-require('./server/environment-development-production.js');
+require('./server/route-environment-development-production.js');
+require('./server/route-public-data-key.js');
 
-app.get("/public-data-key", function(req, res) {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({"key": stripeData.keyPublishable}));
-});
+
 
 app.post("/charge", (req, res) => {
   // req is information in the form where the user enters their information
