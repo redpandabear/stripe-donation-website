@@ -15,16 +15,10 @@ const reactDOMServer = require("react-dom/server");
 const myComponent = require('./client/components/landing_page_fiat.jsx');*/
 const http = require('http');
 const https = require('https');
-
-const port = require('./server/port-setup.js')
+const port = require('./server/port-setup.js');
 const app = require('./server/app-setup.js');
 
-currencyDict = { // A mapping from the symbol used for stripe to the symbol the user sees
-    "cad": "CAD",
-    "eur": "EUR",
-    "gbp": "GBP",
-    "usd": "USD",
-};
+const currencyDict = require('./server/currency-dictionary.js')
 
 app.get("/", function(req, res) {
         if (process.env.PORT) {// check to see if we are working in production
