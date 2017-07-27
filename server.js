@@ -6,13 +6,6 @@ const react = require("react");
 const reactDOMServer = require("react-dom/server");
 const myComponent = require('./client/components/landing_page_fiat.jsx');
 */
-const stripeData = require('./server/stripe-data.js');
-
-// Currency data
-const currencyDict = require('./server/currency-dictionary.js')
-
-const stripe = require("stripe")(stripeData.keySecret);
-
 
 const http = require('http');
 const https = require('https');
@@ -23,8 +16,6 @@ require('./server/route-environment-development-production.js');
 require('./server/route-public-data-key.js');
 require('./server/route-stripe-charge.js');
 require('./server/route-bitpay-invoice.js');
-
-
 
 // TODO: When we get the certificate then we will replace http with https
 // TODO: Use https://stackoverflow.com/questions/7450940/automatic-https-connection-redirect-with-node-js-express
