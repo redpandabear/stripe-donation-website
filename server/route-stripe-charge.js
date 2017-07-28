@@ -13,14 +13,14 @@ app.post("/charge", (req, res) => {
     // TODO: Follow the instructions given in https://www.youtube.com/watch?v=k66bOHX8MnY to get a React landing page
     // TODO: Make sure that req.body actually contains data from the checkout box
     var self = this;
-    const amount = req.body.amount * 100;
-    const selectedCurrency = req.body.currency;
+    const amount = parseInt(req.body.amount * 100);
+    const selectedCurrency = String(req.body.currency);
     const currencyString = currencyDict[selectedCurrency];
 
     // This code runs after the user enters their information into the form
     stripe.customers.create({
-        email: req.body.stripeEmail, // We create a customer based on the email and token passed by the stripe form
-        card: req.body.stripeToken
+        email: String(req.body.stripeEmail), // We create a customer based on the email and token passed by the stripe form
+        card: String(req.body.stripeToken)
     })
         .then(customer =>
             stripe.charges.create({ // // A charge is created based on the data in the html form's body
