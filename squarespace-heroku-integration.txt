@@ -1,0 +1,9 @@
+Steps for converting a hyperlinked button originally from the squarespace site into a button for express.js
+
+1. Convert the squarespace html file you wish to integrate into a pug view
+2. Remove the html file
+3. Add front end scripts to the end of the pug view
+4. Add an attribute to the front end of the pug file that lets us distinguish between development and production
+5. Add a function to controllerClick to send an http request to the server
+6. Add a handler for the button we want to use to refer to the function we wrote in controller click
+7. Write server side code to handle the http requests
