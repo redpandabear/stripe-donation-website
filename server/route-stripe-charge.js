@@ -32,10 +32,15 @@ app.post("/charge", (req, res) => {
             }))
         .catch(err => console.log("Error:", err))
         .then(function (charge) {
-            res.render("landing-page-fiat", { // Here we are using pug to render the output (see views folder)
+            /*res.render("landing-page-fiat", { // Here we are using pug to render the output (see views folder)
                 amount: (charge.amount / 100).toFixed(2), // Here we replace 'amount' in the pug page with the user input
                 currency: currencyString // Here we replace the 'currency' on the pug page with the user input
-            })
+            })*/
+            var data = { // Here we are using pug to render the output (see views folder)
+                amount: (charge.amount / 100).toFixed(2), // Here we replace 'amount' in the pug page with the user input
+                currency: currencyString // Here we replace the 'currency' on the pug page with the user input
+            }
+            res.redirect('http://localhost:4567/thank-you-fiat/?amount='+data.amount+'&currency='+data.currency);
         });
     } else {
         res.end();

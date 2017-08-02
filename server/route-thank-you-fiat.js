@@ -5,7 +5,8 @@
 const app = require('./app-setup.js');
 
 app.get("/thank-you-fiat", function(req, res) {
-        var data = {amount: req.body.amount, currency: req.body.currency};
+        // try http://localhost:4567/thank-you-fiat/?amount=30&currency=CAD
+        var data = {amount: req.query.amount, currency: req.query.currency};
         res.render("landing-page-fiat", data); // Render the main donation page using pug
     }
     //res.sendFile(path.join(__dirname, 'client', 'index.html'))
