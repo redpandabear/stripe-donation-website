@@ -22,7 +22,6 @@ body {
     border-color: #ff3838;
     text-align: center;
     line-height: 35px;
-    height: 200px;
 }
 
 .cssDonateFiatButton {
@@ -119,7 +118,7 @@ body {
     display: block;
 }
 
-.cssDonateVisibleElements button {
+button {
     display: block;
     width: auto;
     height: auto;
@@ -139,6 +138,10 @@ body {
     letter-spacing: 3px;
     border-radius: 0;
     margin-top: 18px;
+}
+
+.cssFiatDonatePanel button{
+    margin-left: 20px;
 }
 
 .cssCurrencySelectionImage {
@@ -189,4 +192,8 @@ body {
 
 .cssCryptoDonatePanel button {
     margin-top: 20px;
+}
+
+.banner-thumbnail-wrapper, .transparent-header.collection-type-page .banner-thumbnail-wrapper {
+    padding: 180px 0 155px;
 }
