@@ -1,6 +1,6 @@
 const app = require('./app-setup.js');
 
-app.get("/", function(req, res) {
+app.get("/pledge", function(req, res) {
         if (process.env.PORT) {// check to see if we are working in production
             res.render("index", {environment: "heroku"}); // Render the main donation page using pug
         } else {
