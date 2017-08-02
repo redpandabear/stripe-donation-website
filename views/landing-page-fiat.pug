@@ -1,0 +1,75 @@
+//
+   Created by danielbruce on 2017-08-02.
+
+//
+   Created by danielbruce on 2017-07-11.
+
+doctype html
+html
+    head
+        title Collider-X
+        link(rel='stylesheet', type='text/css', href='./css/index.css')
+        link(href='https://fonts.googleapis.com/css?family=Titillium+Web', rel='stylesheet')
+        link(rel='stylesheet', type='text/css', href='./css/squarespace.css')
+    body
+        .cssHidden
+            label#environment(type='hidden') #{environment}
+        .cssPageHeaderTitle
+            header#header.show-on-scroll(data-offset-el='.index-section', data-offset-behavior='bottom', role='banner')
+                .header-inner
+                    #logoWrapper.wrapper(data-content-field='site-title')
+                        h1#logoImage
+                            a(href='../index.html')
+                                img(src='https://static1.squarespace.com/static/591870b91e5b6c94073bd659/t/591f645ae58c621fbe953d38/1500926467850/?format=1500w', alt='ColliderX')
+                    //
+                    .mobile-nav-toggle
+                        .top-bar
+                        .middle-bar
+                        .bottom-bar
+                    .mobile-nav-toggle.fixed-nav-toggle
+                        .top-bar
+                        .middle-bar
+                        .bottom-bar
+                    //
+                    #headerNav
+                        #mainNavWrapper.nav-wrapper(data-content-field='navigation-mainNav')
+                            nav#mainNavigation(data-content-field='navigation-mainNav')
+                                .collection.homepage
+                                    a(href='../index.html')
+                                        | Home
+                                .folder.active
+                                    .folder-toggle(data-href='/collaborate/') Collaborate with Us
+                                    .subnav
+                                        .collection
+                                            a(href='https://www.collider-x.org/researcher/')
+                                                | Research with us
+                                        .collection.active
+                                            a(href='index.html')
+                                                | Be our Backer
+                                .collection
+                                    a(href='https://www.collider-x.org/lateststories/')
+                                        | Latest Stories
+                                .collection
+                                    a(href='../our-team-community/index.html')
+                                        | Our Community
+                        // style below blocks out the mobile nav toggle only when nav is loaded
+                        style.
+                            .mobile-nav-toggle-label {
+                                display: inline-block !important;
+                            }
+            .banner-thumbnail-wrapper.has-description(data-content-field='main-image', data-collection-id='59187d5129687fd2ca04bd66', data-edit-main-image='Banner', data-annotation-alignment='bottom left')
+                .color-overlay
+                figure#thumbnail.loading.content-fill
+                    .sqs-video-background.content-fill(sqs-controller='VideoBackground', data-config-url='https://www.youtube.com/watch?v=iApVVKsF94E&list=PLGmxyVGSCDKvmLInHxJ9VdiwEb82Lxd2E&index=3', data-config-playback-speed='1', data-config-filter='5', data-config-filter-strength='', style='filter: invert(1);')
+                        iframe#player.background-video.ready(frameborder='0', allowfullscreen='1', title='YouTube video player', width='560', height='315', src='https://www.youtube.com/embed/iApVVKsF94E?autohide=1&autoplay=0&controls=0&enablejsapi=1&iv_load_policy=3&loop=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&wmode=opaque&origin=http%3A%2F%2Flocalhost%3A4567&widgetid=1', style='width: 1096.89px; height: 617px; left: -51.9444px; top: 0px;')
+                .desc-wrapper(data-collection-id='59187d5129687fd2ca04bd66')
+                    p#yui_3_17_2_1_1501703846713_49
+                        strong(data-shrink-original-size='79', style='letter-spacing: 0.0253165em;') Thank You
+                        br
+                        | Your Pledge Means A Lot To Us
+            //label.cssPageHeaderTitleText Thank You For Your Considering A Pledge To Collider-X
+        .cssDonationPanels
+            .fiatDonationPanel.cssFiatDonatePanel
+                form.fiat-donation-form(action='/charge', method='post')
+                    .cssDonateVisibleElements
+                        label.paymentAmount-label  You just donated #{amount} in #{currency} to the Blockchain research and development hub. As a sponsor, we will ensure that you enjoy all of the perks and benefits of our Blockchain R&D hub and that our research efforts will reflect your contributions.

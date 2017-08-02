@@ -32,7 +32,7 @@ app.post("/charge", (req, res) => {
             }))
         .catch(err => console.log("Error:", err))
         .then(function (charge) {
-            res.render("landing_page_fiat", { // Here we are using pug to render the output (see views folder)
+            res.render("landing-page-fiat", { // Here we are using pug to render the output (see views folder)
                 amount: (charge.amount / 100).toFixed(2), // Here we replace 'amount' in the pug page with the user input
                 currency: currencyString // Here we replace the 'currency' on the pug page with the user input
             })
