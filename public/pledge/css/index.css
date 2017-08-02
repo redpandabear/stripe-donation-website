@@ -127,7 +127,7 @@ button {
     border-radius: 0;
 }
 
-.cssFiatDonatePanel {
+.cssFiatDonatePanel button{
     margin-left: 20px;
 }
 
