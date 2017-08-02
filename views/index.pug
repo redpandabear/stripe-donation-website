@@ -29,7 +29,7 @@ html
                             input#fiat-input-amount.paymentAmount(type='number', name='amount', controllerchangefunction='onSetFiatPayAmount', placeholder='ie. 100')
                         .currencySelectionListWrapper.cssCurrencySelectionListWrapper.cssHidden
                             .currencySelectorList.cssCurrencySelectorList
-                        button#donateButton(controllerclickfunction='openFiatDonation') Donate
+
                     input#stripeToken(name='stripeToken', type='hidden')
                     // Used when the form is submitted
                     input#stripeEmail(name='stripeEmail', type='hidden')
@@ -38,6 +38,7 @@ html
                     // Used when the form is submitted
                     label#error_explanation(type='text')
                     script(src='https://checkout.stripe.com/checkout.js')
+                button#donateButton(controllerclickfunction='openFiatDonation') Donate
             .cryptoDonationPanel.cssCryptoDonatePanel.cssHidden
                 .cssDonateVisibleElements
                     form.crypto-donation-form(action='/create-invoice', method='post')
