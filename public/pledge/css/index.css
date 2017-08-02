@@ -106,7 +106,7 @@ body {
     display: block;
 }
 
-.cssDonateVisibleElements button {
+button {
     display: block;
     width: auto;
     height: auto;
