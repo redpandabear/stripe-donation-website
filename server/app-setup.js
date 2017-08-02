@@ -20,6 +20,7 @@ app.set("view engine", "pug"); // Setting the view engine to Pug
 app.use(express.static('public')); // Allowing rendered pages to access resources in public directory
 app.use(express.static('squarespace')); // Allowing rendered pages to access resources in squarespace directory
 
-console.log("app set up");
+console.log("app set up in the following directory:");
+console.log(__dirname);
 
 module.exports = app;
