@@ -6,6 +6,7 @@ html
     head
         title Collider-X
         link(rel='stylesheet', type='text/css', href='./css/index.css')
+        link(href='https://fonts.googleapis.com/css?family=Titillium+Web', rel='stylesheet')
     body
         .cssHidden
             label#environment(type='hidden') #{environment}
@@ -26,7 +27,7 @@ html
                                 .cssCurrencySelector
                                     label CAD
                                 .cssCurrencySelectionImage
-                            input#fiat-input-amount.paymentAmount(type='number', name='amount', controllerchangefunction='onSetFiatPayAmount', placeholder='ie. 100')
+                            input#fiat-input-amount.paymentAmount.cssPaymentAmount(type='number', name='amount', controllerchangefunction='onSetFiatPayAmount', placeholder='ie. 100')
                         .currencySelectionListWrapper.cssCurrencySelectionListWrapper.cssHidden
                             .currencySelectorList.cssCurrencySelectorList
                         button#donateButton(controllerclickfunction='openFiatDonation') Donate
