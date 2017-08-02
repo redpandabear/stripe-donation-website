@@ -127,6 +127,10 @@ button {
     border-radius: 0;
 }
 
+.cssFiatDonatePanel {
+    margin-left: 20px;
+}
+
 .cssCurrencySelectionImage {
     background-image: url("../images/currency_dropdown.png");
     width: 30px;
