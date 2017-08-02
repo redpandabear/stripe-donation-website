@@ -22,7 +22,6 @@ body {
     border-color: #ff3838;
     text-align: center;
     line-height: 35px;
-    height: 200px;
 }
 
 .cssDonateFiatButton {
@@ -68,6 +67,12 @@ body {
     top: 20px;
 }
 
+.cssErrorValidAmount {
+    padding: 20px;
+    font-family: Titillium Web;
+    font-size: 13pt;
+}
+
 @media screen and (max-width: 345px){
     .cssSelectionOptions {
         height: 110px;
@@ -82,6 +87,8 @@ body {
     width: calc(50% - 2px);
 }
 
+
+
 .paymentAmount-label {
     font-family: Titillium Web;
     font-weight: 400;
@@ -92,6 +99,10 @@ body {
     color: rgba(26,26,26,.7);
 }
 
+.cssPaymentAmount {
+    font-size: 11pt;
+}
+
 .cssDonateVisibleElements {
     padding: 20px;
     display: block;
@@ -100,6 +111,7 @@ body {
 .cssDonateVisibleElements input {
     display: block;
     margin-top: 5px;
+    font-size: 11pt;
 }
 
 .cssDonateVisibleElements label {
@@ -125,9 +137,10 @@ button {
     text-transform: uppercase;
     letter-spacing: 3px;
     border-radius: 0;
+    margin-top: 18px;
 }
 
-.cssFiatDonatePanel button {
+.cssFiatDonatePanel button{
     margin-left: 20px;
 }
 
@@ -150,6 +163,7 @@ button {
 
 .cssCurrencySelector label{
     line-height: 30px;
+    font-family: Titillium Web;
 }
 
 .cssContributionBox {
@@ -167,6 +181,10 @@ button {
     margin-bottom: 20px;
 }
 
+.currencySelectorList {
+    font-family: Titillium Web;
+}
+
 .cssCurrencyElement {
     height: 30px;
     line-height: 30px;
@@ -174,4 +192,8 @@ button {
 
 .cssCryptoDonatePanel button {
     margin-top: 20px;
+}
+
+.banner-thumbnail-wrapper, .transparent-header.collection-type-page .banner-thumbnail-wrapper {
+    padding: 180px 0 155px;
 }
