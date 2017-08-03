@@ -8,6 +8,7 @@ if ($("#environment").text() === "development"){
     var hostName = 'lit-journey-78750.herokuapp.com' // production
 }
 
+// http://lit-journey-78750.herokuapp.com/public-data-key
 var handler = null;
 requestStripeToken = function() {
     jQuery.getJSON('http://' + hostName + "/public-data-key", {}, function (data) {
