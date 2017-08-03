@@ -33,3 +33,7 @@ requestStripeToken();
 $(window).on('popstate', function() {
     handler.close();
 });
+
+/*setInterval(function(){
+    $('#player').seekTo(0);
+}, 5000);*/
