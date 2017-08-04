@@ -1,12 +1,17 @@
-//
-   Created by danielbruce on 2017-07-11.
 doctype html
-html
+html.touch-styles(itemscope='', itemtype='http://schema.org/WebPage', lang='en-US')
     head
         title Collider-X
         link(rel='stylesheet', type='text/css', href='./css/index.css')
         link(href='https://fonts.googleapis.com/css?family=Titillium+Web', rel='stylesheet')
         link(rel='stylesheet', type='text/css', href='./css/squarespace.css')
+        script(src='https://static.squarespace.com/universal/scripts-compressed/common-e839160303cd8097eecb-min.js')
+        script(data-name='static-context').
+            Static.SQUARESPACE_CONTEXT = {"facebookAppId":"314192535267336","rollups":{"squarespace-announcement-bar":{"css":"//static.squarespace.com/universal/styles-compressed/announcement-bar-d41d8cd98f00b204e9800998ecf8427e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/announcement-bar-e6360dc9f13a6f0db606-min.js"},"squarespace-audio-player":{"css":"//static.squarespace.com/universal/styles-compressed/audio-player-76e4bfcc3f9830beb388bae2002fbe6c-min.css","js":"//static.squarespace.com/universal/scripts-compressed/audio-player-99e1cce3c3717aead3da-min.js"},"squarespace-blog-collection-list":{"css":"//static.squarespace.com/universal/styles-compressed/blog-collection-list-d41d8cd98f00b204e9800998ecf8427e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/blog-collection-list-c8cac29dffb3ab75bf89-min.js"},"squarespace-calendar-block-renderer":{"css":"//static.squarespace.com/universal/styles-compressed/calendar-block-renderer-bba726056d2134131ce9d3077c28adbe-min.css","js":"//static.squarespace.com/universal/scripts-compressed/calendar-block-renderer-43ba0605077b8e6a2725-min.js"},"squarespace-chartjs-helpers":{"css":"//static.squarespace.com/universal/styles-compressed/chartjs-helpers-9935a41d63cf08ca108505d288c1712e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/chartjs-helpers-fc346fe971fab8672f41-min.js"},"squarespace-comments":{"css":"//static.squarespace.com/universal/styles-compressed/comments-c7f2c7b1144acc1ab8eccbf89bd5b0fe-min.css","js":"//static.squarespace.com/universal/scripts-compressed/comments-d39611c1f88cbe0afb26-min.js"},"squarespace-dialog":{"css":"//static.squarespace.com/universal/styles-compressed/dialog-aba41cb3c0853ecd2e2fb2303806d950-min.css","js":"//static.squarespace.com/universal/scripts-compressed/dialog-1b1b626584690f835145-min.js"},"squarespace-events-collection":{"css":"//static.squarespace.com/universal/styles-compressed/events-collection-bba726056d2134131ce9d3077c28adbe-min.css","js":"//static.squarespace.com/universal/scripts-compressed/events-collection-4a3c69e074b389a518b3-min.js"},"squarespace-form-rendering-utils":{"js":"//static.squarespace.com/universal/scripts-compressed/form-rendering-utils-4783eca3e0c07e8cdfeb-min.js"},"squarespace-gallery-collection-list":{"css":"//static.squarespace.com/universal/styles-compressed/gallery-collection-list-d41d8cd98f00b204e9800998ecf8427e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/gallery-collection-list-c2fb7979e33a55eaee40-min.js"},"squarespace-image-zoom":{"css":"//static.squarespace.com/universal/styles-compressed/image-zoom-ae974921915aeccaff8ad60c60e19c31-min.css","js":"//static.squarespace.com/universal/scripts-compressed/image-zoom-a70deb6b76fb1688285f-min.js"},"squarespace-pinterest":{"css":"//static.squarespace.com/universal/styles-compressed/pinterest-d41d8cd98f00b204e9800998ecf8427e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/pinterest-6a670cf0b03f6764c236-min.js"},"squarespace-popup-overlay":{"css":"//static.squarespace.com/universal/styles-compressed/popup-overlay-b5d0993c85a2b5a604d02091b6b86723-min.css","js":"//static.squarespace.com/universal/scripts-compressed/popup-overlay-2f0f3867f59317e7c287-min.js"},"squarespace-product-quick-view":{"css":"//static.squarespace.com/universal/styles-compressed/product-quick-view-e115b32dc09c37fe6f7e98f568e08b74-min.css","js":"//static.squarespace.com/universal/scripts-compressed/product-quick-view-24368f9f184825ed6a9f-min.js"},"squarespace-products-collection-item-v2":{"css":"//static.squarespace.com/universal/styles-compressed/products-collection-item-v2-ae974921915aeccaff8ad60c60e19c31-min.css","js":"//static.squarespace.com/universal/scripts-compressed/products-collection-item-v2-38d6a13908a47567c8e2-min.js"},"squarespace-products-collection-list-v2":{"css":"//static.squarespace.com/universal/styles-compressed/products-collection-list-v2-ae974921915aeccaff8ad60c60e19c31-min.css","js":"//static.squarespace.com/universal/scripts-compressed/products-collection-list-v2-1811c60da22e37aa886b-min.js"},"squarespace-search-page":{"css":"//static.squarespace.com/universal/styles-compressed/search-page-9c747eeaabe96dacfea4932a63336f54-min.css","js":"//static.squarespace.com/universal/scripts-compressed/search-page-e4b77ceaa4f09eb1cb6e-min.js"},"squarespace-search-preview":{"js":"//static.squarespace.com/universal/scripts-compressed/search-preview-4fc92013e70e4fee45c2-min.js"},"squarespace-share-buttons":{"js":"//static.squarespace.com/universal/scripts-compressed/share-buttons-a355f3c52bc66f1de548-min.js"},"squarespace-simple-liking":{"css":"//static.squarespace.com/universal/styles-compressed/simple-liking-09fa291ec2800c97714f0d157fd0a6ca-min.css","js":"//static.squarespace.com/universal/scripts-compressed/simple-liking-496f75012f2732c6f42c-min.js"},"squarespace-social-buttons":{"css":"//static.squarespace.com/universal/styles-compressed/social-buttons-7a696232d1cd101fd62b5f174f9ae6ff-min.css","js":"//static.squarespace.com/universal/scripts-compressed/social-buttons-9b031c791f24f379b565-min.js"},"squarespace-tourdates":{"css":"//static.squarespace.com/universal/styles-compressed/tourdates-d41d8cd98f00b204e9800998ecf8427e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/tourdates-4298dc5159b9882c2eef-min.js"},"squarespace-website-overlays-manager":{"css":"//static.squarespace.com/universal/styles-compressed/website-overlays-manager-d1b0ace5f5af772d643f5a6ce0056946-min.css","js":"//static.squarespace.com/universal/scripts-compressed/website-overlays-manager-016442d9dd9521c43865-min.js"}},"pageType":2,"website":{"id":"591870b91e5b6c94073bd659","identifier":"iliana-orisvaliente","websiteType":1,"contentModifiedOn":1500926467850,"cloneable":false,"siteStatus":{},"language":"en-US","timeZone":"America/Toronto","machineTimeZoneOffset":-14400000,"timeZoneOffset":-14400000,"timeZoneAbbr":"EDT","siteTitle":"ColliderX","siteTagLine":"TAG LINE GOES HERE","siteDescription":"<p>ColliderX is the world\\u2019s first open-source,&nbsp;crowdsourced, and crowdfunded blockchain research and development hub. This is a unique model for unbiased, ground-breaking R&amp;D that bridges the gap between industry problems and pure academic or corporate research.</p>","logoImageId":"591f645ae58c621fbe953d38","socialLogoImageId":"591f63f2bf629a1d8f9c8b6b","shareButtonOptions":{"6":true,"3":true,"1":true,"2":true,"4":true},"logoImageUrl":"//static1.squarespace.com/static/591870b91e5b6c94073bd659/t/591f645ae58c621fbe953d38/1500926467850/","socialLogoImageUrl":"//static1.squarespace.com/static/591870b91e5b6c94073bd659/t/591f63f2bf629a1d8f9c8b6b/1500926467850/","authenticUrl":"https://www.collider-x.org","internalUrl":"https://iliana-orisvaliente.squarespace.com","baseUrl":"https://www.collider-x.org","primaryDomain":"www.collider-x.org","sslSetting":3,"isHstsEnabled":false,"socialAccounts":[{"serviceId":4,"userId":"864517748382216209","userName":"ColliderX","screenname":"ColliderX","addedOn":1495135367746,"profileUrl":"https://twitter.com/ColliderX","iconUrl":"http://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png","collectionId":"591df48720099eb0908c5378","iconEnabled":true,"serviceName":"twitter"},{"serviceId":14,"userId":"F5dzgkIXAT","userName":"mawaddabasir","screenname":"Mawadda Basir","addedOn":1495139812586,"profileUrl":"https://www.linkedin.com/company-beta/22298903","iconUrl":"https://media.licdn.com/mpr/mprx/0_YMyuHk5dgMjg76R5NHkGh1hdjolp7Fwz-HkumKTHjVMgoc9d4gH2hCfdUVDgfNsqOgHCQ1uWlg-jWir5coMKhKS5qg-yWitvtoM7IlZe0yFr_zWdOUf3wLnMNHHuhiLkRWj8uigqRGz","iconEnabled":true,"serviceName":"linkedin"},{"serviceId":32,"screenname":"Medium","addedOn":1500837221904,"profileUrl":"https://medium.com/@colliderX","iconEnabled":true,"serviceName":"medium"}],"typekitId":"","statsMigrated":false,"imageMetadataProcessingEnabled":false,"screenshotId":"a27c80bd"},"websiteSettings":{"id":"591870b91e5b6c94073bd65b","websiteId":"591870b91e5b6c94073bd659","type":"Non-Profit","subjects":[],"country":"CA","state":"ON","simpleLikingEnabled":true,"mobileInfoBarSettings":{"isContactEmailEnabled":false,"isContactPhoneNumberEnabled":false,"isLocationEnabled":false,"isBusinessHoursEnabled":false},"commentLikesAllowed":true,"commentAnonAllowed":true,"commentThreaded":true,"commentApprovalRequired":false,"commentAvatarsOn":true,"commentSortType":2,"commentFlagThreshold":0,"commentFlagsAllowed":true,"commentEnableByDefault":true,"commentDisableAfterDaysDefault":0,"disqusShortname":"","commentsEnabled":false,"storeSettings":{"returnPolicy":null,"termsOfService":null,"privacyPolicy":null,"paymentSettings":{},"expressCheckout":false,"useLightCart":false,"showNoteField":false,"shippingCountryDefaultValue":"US","billToShippingDefaultValue":false,"showShippingPhoneNumber":true,"isShippingPhoneRequired":false,"showBillingPhoneNumber":true,"isBillingPhoneRequired":false,"multipleQuantityAllowedForServices":true,"currenciesSupported":["CHF","HKD","MXN","EUR","DKK","USD","CAD","MYR","NOK","THB","AUD","SGD","ILS","PLN","GBP","CZK","SEK","NZD","PHP","RUB"],"defaultCurrency":"USD","selectedCurrency":"USD","measurementStandard":1,"showCustomCheckoutForm":false,"enableMailingListOptInByDefault":false,"sameAsRetailLocation":false,"isLive":false},"useEscapeKeyToLogin":true,"ssBadgeType":1,"ssBadgePosition":4,"ssBadgeVisibility":1,"ssBadgeDevices":1,"pinterestOverlayOptions":{"mode":"disabled"},"ampEnabled":false},"cookieSettings":{"isRestrictiveCookiePolicyEnabled":false},"websiteCloneable":false,"collection":{"title":"Be our Backer","id":"59187d5129687fd2ca04bd66","fullUrl":"/be-a-backer/","type":10},"subscribed":false,"appDomain":"squarespace.com","templateTweakable":true,"tweakJSON":{"aspect-ratio":"Auto","banner-slideshow-controls":"Arrows","gallery-arrow-style":"No Background","gallery-aspect-ratio":"3:2 Standard","gallery-auto-crop":"true","gallery-autoplay":"false","gallery-design":"Grid","gallery-info-overlay":"Show on Hover","gallery-loop":"false","gallery-navigation":"Bullets","gallery-show-arrows":"true","gallery-transitions":"Fade","galleryArrowBackground":"rgba(34,34,34,1)","galleryArrowColor":"rgba(255,255,255,1)","galleryAutoplaySpeed":"3","galleryCircleColor":"rgba(255,255,255,1)","galleryInfoBackground":"rgba(0, 0, 0, .7)","galleryThumbnailSize":"100px","gridSize":"280px","gridSpacing":"10px","logoContainerWidth":"190px","product-gallery-auto-crop":"false","product-image-auto-crop":"true","siteTitleContainerWidth":"220px"},"templateId":"52a74dafe4b073a80cd253c5","pageFeatures":[1,2,4],"impersonatedSession":false,"demoCollections":[{"collectionId":"52b1eff5e4b0871946c207e4","deleted":false},{"collectionId":"52a76dc2e4b0dfaa507e7b32","deleted":false},{"collectionId":"52c71337e4b07aa29e46fa44","deleted":false},{"collectionId":"52d8053ce4b0e26973428261","deleted":true},{"collectionId":"52cad0a1e4b06ad2e57287af","deleted":true},{"collectionId":"52d067ace4b0bd5a03cf573b","deleted":false},{"collectionId":"52e18d59e4b08face9704bad","deleted":true},{"collectionId":"52d80724e4b0c692d7428ff2","deleted":false},{"collectionId":"52a76db3e4b0dfaa507e7b18","deleted":false},{"collectionId":"52e175e7e4b03c845ac17314","deleted":true}],"isFacebookTab":false,"tzData":{"zones":[[-300,"Canada","E%sT",null]],"rules":{"Canada":[[1974,2006,null,"Oct","lastSun","2:00","0","S"],[1987,2006,null,"Apr","Sun>=1","2:00","1:00","D"],[2007,"max",null,"Mar","Sun>=8","2:00","1:00","D"],[2007,"max",null,"Nov","Sun>=1","2:00","0","S"]]}},"useNewImageLoader":true};
+        script(type='text/javascript').
+            SquarespaceFonts.loadViaContext(); Squarespace.load(window);
+        // <![endif]
+        // End of Squarespace Headers
     body
         .cssHidden
             label#environment(type='hidden') #{environment}
@@ -17,7 +22,6 @@ html
                         h1#logoImage
                             a(href='../index.html')
                                 img(src='https://static1.squarespace.com/static/591870b91e5b6c94073bd659/t/591f645ae58c621fbe953d38/1500926467850/?format=1500w', alt='ColliderX')
-                    //
                     .mobile-nav-toggle
                         .top-bar
                         .middle-bar
@@ -26,7 +30,6 @@ html
                         .top-bar
                         .middle-bar
                         .bottom-bar
-                    //
                     #headerNav
                         #mainNavWrapper.nav-wrapper(data-content-field='navigation-mainNav')
                             nav#mainNavigation(data-content-field='navigation-mainNav')
@@ -53,18 +56,16 @@ html
                             .mobile-nav-toggle-label {
                                 display: inline-block !important;
                             }
-            .banner-thumbnail-wrapper.has-description(data-content-field='main-image', data-collection-id='59187d5129687fd2ca04bd66', data-edit-main-image='Banner', data-annotation-alignment='bottom left')
+            .banner-thumbnail-wrapper.has-description(data-annotation-alignment='bottom left', data-collection-id='59187d5129687fd2ca04bd66', data-content-field='main-image', data-edit-main-image='Banner')
                 .color-overlay
                 figure#thumbnail.loading.content-fill
-                    .sqs-video-background.content-fill(sqs-controller='VideoBackground', data-config-url='https://www.youtube.com/watch?v=iApVVKsF94E&list=PLGmxyVGSCDKvmLInHxJ9VdiwEb82Lxd2E&index=3', data-config-playback-speed='1', data-config-filter='5', data-config-filter-strength='', style='filter: invert(1);')
-                        iframe#player.background-video.ready(frameborder='0', allowfullscreen='1', title='YouTube video player', width='560', height='315', style='width: 1096.89px; height: 617px; left: -51.9444px; top: 0px;')
-                        // iframe#player.background-video.ready(frameborder='0', allowfullscreen='1', title='YouTube video player', width='560', height='315', src='https://www.youtube.com/embed/iApVVKsF94E?autohide=1&autoplay=1&controls=0&enablejsapi=1&iv_load_policy=3&loop=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&wmode=opaque&origin=https%3A%2F%2Fwww.collider-x.org&widgetid=1', style='width: 1096.89px; height: 617px; left: -51.9444px; top: 0px;')
+                    .sqs-video-background.content-fill(data-config-filter='5', data-config-filter-strength='', data-config-playback-speed='1', data-config-url='https://www.youtube.com/watch?v=iApVVKsF94E&list=PLGmxyVGSCDKvmLInHxJ9VdiwEb82Lxd2E&index=3')
+                        #player
                 .desc-wrapper(data-collection-id='59187d5129687fd2ca04bd66')
-                    p#yui_3_17_2_1_1501703846713_49
-                        strong(data-shrink-original-size='79', style='letter-spacing: 0.0253165em;') Make A Pledge
+                    p
+                        strong Make a pledge
                         br
                         | Invest in a new way of doing research and bring the world closer to a Blockchain Future
-            //label.cssPageHeaderTitleText Thank You For Your Considering A Pledge To Collider-X
         .cssSelectionOptions
             .donateFiatButton.cssDonateFiatButton.cssPledgeOptionButton(controllerclickfunction='startFiatDonation')
                 label.cssPledgeLabel  Pledge in Fiat
@@ -74,23 +75,22 @@ html
             .fiatDonationPanel.cssFiatDonatePanel
                 form.fiat-donation-form(action='/charge', method='post')
                     .cssDonateVisibleElements
-                        label.paymentAmount-label  How much would you like to contribute?
+                        label.paymentAmount-label How much would you like to contribute?
                         .cssContributionBox
-                            .currencySelectionBox.cssCurrencySelectionBox(controllerclickfunction='changeCurrency')
+                            .currencySelectionBox.cssCurrencySelectionBox
                                 .cssCurrencySelector
                                     label CAD
                                 .cssCurrencySelectionImage
-                            input#fiat-input-amount.paymentAmount.cssPaymentAmount(type='number', name='amount', controllerchangefunction='onSetFiatPayAmount', placeholder='ie. 100')
+                            input#fiat-input-amount.paymentAmount.cssPaymentAmount(name='amount', placeholder='ie. 100', type='number')
                         .currencySelectionListWrapper.cssCurrencySelectionListWrapper.cssHidden
                             .currencySelectorList.cssCurrencySelectorList
-
                     input#stripeToken(name='stripeToken', type='hidden')
                     // Used when the form is submitted
                     input#stripeEmail(name='stripeEmail', type='hidden')
                     // Used when the form is submitted
                     input#currency(name='currency', type='hidden')
                     // Used when the form is submitted
-                    label#error_explanation(type='text')
+                    label#error_explanation
                     script(src='https://checkout.stripe.com/checkout.js')
                 button#donateButton(controllerclickfunction='openFiatDonation') Donate
             .cryptoDonationPanel.cssCryptoDonatePanel.cssHidden
@@ -103,7 +103,11 @@ html
                         input#bitcoinAmount(name='bitcoinAmount', placeholder='ie. 0.1')
                         // Used when the form is submitted
                         button(id='')  Donate
-        // Scripts begin here
+        script(src='https://static1.squarespace.com/static/ta/52a74d9ae4b0253945d2aee9/992/scripts/site-bundle.js', type='text/javascript')
+        script(data-sqs-type='imageloader-bootstraper', type='text/javascript').
+            (function() {if(window.ImageLoader) { window.ImageLoader.bootstrap({}, document); }})();
+        script.
+            Squarespace.afterBodyLoad(Y);
         script(src='third_party/jquery-3.2.1.min.js')
         script(src='controller/setup_controller.js')
         script(src='controller/controller_change.js')
