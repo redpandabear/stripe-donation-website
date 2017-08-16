@@ -2,11 +2,12 @@
  * Created by danielbruce on 2017-06-08.
  */
 
-if ($("#environment").text() === "development"){
+/*if ($("#environment").text() === "development"){
     var hostName = "localhost:4567"; // development
 } else {
     var hostName = 'lit-journey-78750.herokuapp.com' // production
-}
+}*/
+var hostName = $("#environment").text();
 
 // http://lit-journey-78750.herokuapp.com/public-data-key
 var handler = null;
