@@ -24,6 +24,8 @@ requestStripeToken = function() {
             locale: 'auto',
             name: 'Collider-X',
             description: 'One-time Donation',
+            zipCode: true,
+            'billing-address': true,
             currency: g_IndexView.getSelectedCurrency(),
             token: function (token) {
                 // JSON.stringify(token)
