@@ -2,21 +2,30 @@
  * Created by danielbruce on 2017-06-08.
  */
 
-if ($("#environment").text() === "development"){
+/*if ($("#environment").text() === "development"){
     var hostName = "localhost:4567"; // development
 } else {
     var hostName = 'lit-journey-78750.herokuapp.com' // production
+}*/
+var urlCall = "";
+var hostName = $("#environment").text();
+if (hostName === "localhost:4567"){
+    urlCall = 'http://' + hostName + "/public-data-key";
+} else {
+    urlCall = 'https://' + hostName + "/public-data-key";
 }
 
 // http://lit-journey-78750.herokuapp.com/public-data-key
 var handler = null;
 requestStripeToken = function() {
-    jQuery.getJSON('http://' + hostName + "/public-data-key", {}, function (data) {
+    jQuery.getJSON(urlCall, {}, function (data) {
         handler = StripeCheckout.configure({
             key: data.key,
             locale: 'auto',
             name: 'Collider-X',
             description: 'One-time Donation',
+            zipCode: true,
+            'billing-address': true,
             currency: g_IndexView.getSelectedCurrency(),
             token: function (token) {
                 // JSON.stringify(token)
