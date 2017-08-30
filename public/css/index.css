@@ -1,6 +1,84 @@
 body {
     margin: 0px;
 }
+
+/* container for iphone 6 and below */
+@media screen and (max-width: 480px) {
+
+    .cssPageHeaderTitle {
+        height: 400px;
+    }
+
+    #desc-wrapper-id {
+        padding-top: 25%;
+    }
+
+    #desc-wrapper-id > p > strong {
+        font-size: 49px;
+        font-weight: 800;
+    }
+    
+    /* Collider-X logo on top*/
+    #header > div {
+        text-align: left;
+    }
+
+    #subtitle {
+        width: 207px;
+        line-height: 27px;
+        align: center;
+    }
+
+    #cssSelectionOptionsId > div.donateFiatButton {
+        background-color: #5E5E5E !important;
+        width: calc(50% + 2px);
+    }
+    
+    .cssDonateVisibleElements {
+        padding-top: 30px !important;
+    }    
+
+    #cssSelectionOptionsId > div.donateFiatButton > label.cssPledgeLabel{
+        text-align: center;
+        line-height: 27px;
+        color: white;
+    }
+
+    #cssSelectionOptionsId > div.cssDonateCryptoButton {
+        background-color: white !important;   
+    }
+
+    #cssSelectionOptionsId > div.donateCryptoButton > label.cssPledgeLabel{
+        text-align: center;
+        line-height: 27px;
+        color: #F23131;
+    }
+
+    .fiat-donation-form > div.cssDonateVisibleElements > label {
+        font-size: 32px;
+        text-align: center;
+        line-height: 49px;
+        font-weight: bold;
+        color: black;
+    }
+
+    #currencySelectionBoxId {
+        display: inline-block;
+        text-align: center;
+        margin: auto;
+        float: none;
+        left: calc(80% + 10px);
+        position: relative;
+        padding-top: 30px;
+    }
+
+    #currencySelectionBoxId > .cssCurrencySelector > label {
+        font-size: 32px;
+        color: #F23131;
+        font-weight: bolder;
+    }
+}
+
 .cssPageHeaderTitleText {
     font-family: Titillium Web;
     font-weight: 700;
@@ -15,6 +93,9 @@ body {
     position: relative;
     top: 30%;
     transform: translateY(-50%);
+    display: grid;
+    grid-template-columns: 2fr auto 2fr;
+    grid-template-rows: 25% 100px auto;
 }
 
 .cssPageHeaderTitle {
@@ -194,6 +275,9 @@ button {
     margin-top: 20px;
 }
 
+#banner-thumbnail-wrapper-id {
+    padding: 0;
+}
 .banner-thumbnail-wrapper, .transparent-header.collection-type-page .banner-thumbnail-wrapper {
     padding: 180px 0 155px;
 }
