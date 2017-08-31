@@ -4,7 +4,9 @@ body {
 
 /* container for iphone 6 and below */
 @media screen and (max-width: 480px) {
-
+    body {
+        height: 1011px;
+    }
     .cssPageHeaderTitle {
         height: 400px;
     }
@@ -28,10 +30,15 @@ body {
         line-height: 27px;
         align: center;
     }
+    
+    #cssSelectionOptionsId {
+        height: 119px;
+    }
 
     #cssSelectionOptionsId > div.donateFiatButton {
         background-color: #5E5E5E !important;
         width: calc(50% + 2px);
+        height: 119px;
     }
     
     .cssDonateVisibleElements {
@@ -41,19 +48,23 @@ body {
     #cssSelectionOptionsId > div.donateFiatButton > label.cssPledgeLabel{
         text-align: center;
         line-height: 27px;
+        top: calc(50% - 15px);
         color: white;
     }
 
     #cssSelectionOptionsId > div.cssDonateCryptoButton {
         background-color: white !important;   
+        height: 119px;
     }
 
     #cssSelectionOptionsId > div.donateCryptoButton > label.cssPledgeLabel{
         text-align: center;
         line-height: 27px;
         color: #F23131;
+        top: calc(50% - 15px);
     }
-
+    
+    /* "How much would you like to contribute" in fiat */
     .fiat-donation-form > div.cssDonateVisibleElements > label {
         font-size: 32px;
         text-align: center;
@@ -61,13 +72,23 @@ body {
         font-weight: bold;
         color: black;
     }
-
+    
+    /* How much Bitcoin would you like to pledge */
+    div.cryptoDonationPanel.cssCryptoDonatePanel.cssHidden > div > form > label {
+        font-size: 32px;
+        text-align: center;
+        line-height: 49px;
+        font-weight: bold;
+        color: black;
+    }
+    
+    /* CAD? */
     #currencySelectionBoxId {
         display: inline-block;
         text-align: center;
         margin: auto;
         float: none;
-        left: calc(80% + 10px);
+        left: calc(40% + 10px);
         position: relative;
         padding-top: 30px;
     }
@@ -76,6 +97,25 @@ body {
         font-size: 32px;
         color: #F23131;
         font-weight: bolder;
+    }
+
+    #fiat-input-amount, #bitcoinAmount {
+        padding: 10px;
+        font-size: 32px;
+        position: relative;
+        left: 15px;
+        width: 288px;
+        margin-top: 30px;
+    }
+
+    #donateButton, .bitcoinDonate {
+        margin: 0 auto;
+        text-transform: uppercase;
+        font-family: Titillium Web;
+        font-size: 24px;
+        height: 61px;
+        width: 204px;
+        padding: 0;
     }
 }
 
